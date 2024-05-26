@@ -1,0 +1,4 @@
+.env
+vendor/
+database.yaml
+Gemfile.lock
