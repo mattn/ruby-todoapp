@@ -3,8 +3,7 @@ require 'json'
 require 'yaml'
 Bundler.require
 
-config = YAML.load_file('./database.yaml')
-set :database, config["db"]["development"]
+set :database, ENV["DATABASE_URL"]
 set :show_exceptions, false
 set :public_folder, Proc.new { File.join(root, "assets") }
 
