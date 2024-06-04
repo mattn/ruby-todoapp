@@ -7,15 +7,16 @@ set :database, ENV["DATABASE_URL"]
 set :show_exceptions, false
 set :public_folder, Proc.new { File.join(root, "assets") }
 
-use Rack::PostBodyContentTypeParser
-
 class Task < ActiveRecord::Base
   self.table_name = 'Task'
+  primary_key = :id
 end
 
 error ActiveRecord::RecordNotFound do |e|
   not_found
 end
+
+use Rack::PostBodyContentTypeParser
 
 get '/' do
   File.read('assets/index.html')
