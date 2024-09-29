@@ -37,6 +37,11 @@ post '/tasks', provides: :json do
   Task.create(text: params[:text].to_s).to_json
 end
 
+post '/tasks/:id', provides: :json do
+  content_type :json
+  Task.update(completed: params[:completed]).to_json
+end
+
 delete '/tasks/:id' do
   content_type :json
   Task.destroy_by(id: params[:id].to_i).to_json
