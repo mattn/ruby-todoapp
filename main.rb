@@ -1,18 +1,18 @@
-require "bundler/setup"
+require 'bundler/setup'
 require 'json'
 require 'yaml'
 Bundler.require
 
-set :database, ENV["DATABASE_URL"]
+set :database, ENV.fetch('DATABASE_URL')
 set :show_exceptions, false
-set :public_folder, Proc.new { File.join(root, "assets") }
+set :public_folder, proc { File.join(root, 'assets') }
 
 class Task < ActiveRecord::Base
   self.table_name = 'Task'
-  primary_key = :id
+  self.primary_key = :id
 end
 
-error ActiveRecord::RecordNotFound do |e|
+error ActiveRecord::RecordNotFound do |_|
   not_found
 end
 

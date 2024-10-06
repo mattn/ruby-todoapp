@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'pg'
-gem 'sinatra'
 gem 'activerecord'
-gem 'sinatra-activerecord'
+gem 'pg'
 gem 'rack-contrib'
-gem "rackup", "~> 2.1"
+gem 'rackup', '~> 2.1'
 gem 'rake'
+gem 'sinatra'
+gem 'sinatra-activerecord'
 gem 'sqlite3'
