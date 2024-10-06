@@ -39,7 +39,7 @@ end
 
 post '/tasks/:id', provides: :json do
   content_type :json
-  Task.update(completed: params[:completed]).to_json
+  Task.find(params[:id].to_i).update(completed: params[:completed]).to_json
 end
 
 delete '/tasks/:id' do
