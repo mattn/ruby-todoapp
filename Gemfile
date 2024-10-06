@@ -7,3 +7,4 @@ gem 'sinatra-activerecord'
 gem 'rack-contrib'
 gem "rackup", "~> 2.1"
 gem 'rake'
+gem 'sqlite3'
